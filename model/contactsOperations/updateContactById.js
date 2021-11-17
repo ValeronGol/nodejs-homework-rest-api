@@ -1,11 +1,10 @@
 const updateContacts = require('./updateContacts')
 const listContacts = require('./listContacts')
 
-const updateContactById = async (id, update) => {
+const updateContactById = async (contactId, update) => {
   try {
     const contacts = await listContacts()
-    // eslint-disable-next-line eqeqeq
-    const idx = contacts.findIndex(item => item.id == id)
+    const idx = contacts.findIndex(item => item.id === Number(contactId))
     if (idx === -1) {
       return null
     }

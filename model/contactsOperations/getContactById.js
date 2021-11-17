@@ -1,15 +1,13 @@
-/* eslint-disable eqeqeq */
 const listContacts = require('./listContacts')
 
 async function getContactById(contactId) {
   try {
     const contacts = await listContacts()
-    const [contactById] = contacts.filter(({ id }) => id == contactId)
-    if (!contactById) {
-      console.log(contactById)
+    const contact = contacts.find(item => item.id === Number(contactId))
+    if (!contact) {
       return null
     }
-    return contactById
+    return contact
   } catch (error) {
     console.error(error)
     throw error
