@@ -3,7 +3,8 @@ const listContacts = require('./listContacts')
 async function getContactById(contactId) {
   try {
     const contacts = await listContacts()
-    const contact = contacts.find(item => item.id === Number(contactId))
+    // eslint-disable-next-line eqeqeq
+    const contact = contacts.find(item => item.id == contactId)
     if (!contact) {
       return null
     }

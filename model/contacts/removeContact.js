@@ -6,9 +6,8 @@ async function removeContact(contactId) {
   try {
     const contacts = await listContacts()
     const contact = await getContactById(contactId)
-    const newContactList = contacts.filter(
-      item => item.id !== Number(contactId),
-    )
+    // eslint-disable-next-line eqeqeq
+    const newContactList = contacts.filter(item => item.id != contactId)
     await update(newContactList)
     console.log(contact)
     return contact
