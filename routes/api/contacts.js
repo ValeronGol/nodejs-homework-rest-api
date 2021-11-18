@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+// const { contactsValidation } = require('../../middlewares/validation')
 const controllerslContacts = require('../../controllers/contacts')
 
 router.get('/', controllerslContacts.listContacts)

@@ -1,5 +1,5 @@
-const contactsOperations = require('../../model/contactsOperations/')
-const { contactsValidation } = require('../../validation')
+const contactsOperations = require('../../model/contacts')
+const { contactsValidation } = require('../../middlewares/validation')
 
 const addContact = async (req, res, next) => {
   try {
