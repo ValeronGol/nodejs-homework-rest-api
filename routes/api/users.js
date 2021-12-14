@@ -25,5 +25,7 @@ router.patch(
   sizeChanger,
   ctrlWrapper(ctrl.updateAvatar),
 )
+router.get('/verify/:verificationToken', ctrlWrapper(ctrl.verify))
+router.post('/verify/', ctrlWrapper(ctrl.verifyAgain))
 
 module.exports = router
